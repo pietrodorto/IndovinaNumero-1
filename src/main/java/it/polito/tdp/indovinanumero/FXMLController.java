@@ -81,7 +81,7 @@ public class FXMLController {
     	} else {
     		txtRisultato.appendText("Tentativo troppo ALTO\n");
     	}
-    	
+    	//aggiorno i tentativi rimasti
     	txtRimasti.setText(Integer.toString(this.model.getTMAX() - this.model.getTentativiFatti()));
     	
     	

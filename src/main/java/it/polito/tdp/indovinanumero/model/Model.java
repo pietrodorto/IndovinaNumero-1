@@ -11,7 +11,7 @@ public class Model {
 	private int segreto;
 	private int tentativiFatti;
 	private boolean inGioco;
-	
+	//ogni volta che inizia una nuova partita creo un nuovo set di tentativi che conterrà la storia della partita corrente
 	private Set<Integer> tentativi;
 	
 
@@ -25,7 +25,7 @@ public class Model {
     	this.segreto = (int)(Math.random() * NMAX) + 1;
     	this.tentativiFatti = 0;
     	this.inGioco = true; 
-    	this.tentativi = new HashSet<Integer>();
+    	this.tentativi = new HashSet<Integer>(); //conveniente quando noi vogliamo cercare se all'interno di questo contenitore c'e un determinato elemento
     	
 	}
 	
@@ -62,12 +62,12 @@ public class Model {
 			return 1;
 		}
 	}
-	
+	 
 	private boolean tentativoValido(int tentativo) {
 		if(tentativo < 1 || tentativo > NMAX) {
 			return false;
 		} else {
-			if(this.tentativi.contains(tentativo)) {
+			if(this.tentativi.contains(tentativo)) { //controllo se il contenitore contiene già il tentativo, altrimenti il tentativo è valido
 				return false;
 			}
 			return true;
